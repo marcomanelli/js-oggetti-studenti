@@ -26,17 +26,20 @@ var arrStudenti = [
   }
 ]
 
-for(var key in arrStudenti){
-
-  for(var key2 in studente){
-    console.log('Nome: ' + studente.nome + '/Cognome: ' + studente.cognome);
-  }
-}
-
-function addStudente (target,addNome,addCognome,addAnni){
+function addStudente(target,addNome,addCognome,addAnni){
   target.push({
     nome : addNome,
     cognome : addCognome,
     anni : addAnni
   });
+}
+
+var addNome = prompt('Nome?')
+var addCognome = prompt('Cognome?')
+var addAnni = parseInt(prompt('Anni?'))
+
+addStudente(arrStudenti,addNome,addCognome,addAnni)
+
+for(var key of arrStudenti){
+  console.log('Nome: ' + key.nome + '/Cognome: ' + key.cognome)
 }
